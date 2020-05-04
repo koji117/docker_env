@@ -1,0 +1,11 @@
+version: '3'
+services:
+  arcgis-jupyter-lab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: anaconda3_arcgis:1.62_post
+    ports:
+    - "8888:8888"
+    volumes:
+    - ./data:/workdir

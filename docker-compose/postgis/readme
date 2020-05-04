@@ -1,0 +1,3 @@
+Data will be persisted in ~/docker/postres-data
+The server connection in PGADMIN can be configured by editting ~/docker/postgres-data/servers.json
+Files can be accessed from pgadmin via /docker/postgres-data/pgadmin/storage/admin
