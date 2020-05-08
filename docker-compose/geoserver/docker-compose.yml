@@ -2,7 +2,7 @@ version: '3.3'
 services:
 
     postgis:
-        image: postgis:12.3
+        image: postgis:11.3
         container_name: postgis
         ports:
             - 5432:5432
