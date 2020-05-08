@@ -7,9 +7,9 @@ services:
         ports:
             - 5432:5432
         volumes:
-           - /opt/postgis/data/init.d:/docker-entrypoint-initdb.d
-           - /opt/postgis/data/data:/var/lib/postgresql/data
-           - /opt/postgis/data/servers.json:/tmp/servers.js
+           - ~/docker/docker-compose/mount/init.d:/docker-entrypoint-initdb.d
+           - ~/docker/docker-compose/mount/data:/var/lib/postgresql/data
+           - ~/docker/docker-compose/mount//servers.json:/tmp/servers.js
         environment:
             POSTGRES_USER: postgres
             POSTGRES_PASSWORD: postgres
@@ -24,7 +24,7 @@ services:
         ports:
             - 8000:80
         volumes:
-            - /opt/postgis/data/pgadmin4:/var/lib/pgadmin
+            - ~/docker/docker-compose/mount/pgadmin4:/var/lib/pgadmin
         environment:
             PGADMIN_DEFAULT_EMAIL: admin
             PGADMIN_DEFAULT_PASSWORD: admin
@@ -41,7 +41,7 @@ services:
             - 8080:8080
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
-            - /opt/geoserver/data/:/geoserver_data/data
+            - ~/docker/docker-compose/mount/geoserver/data/:/geoserver_data/data
         hostname: geoserver
         restart: always
         user: root
